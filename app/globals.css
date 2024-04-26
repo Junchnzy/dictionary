@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* light */
+:root {
+  --bg: #fff;
+  --a: #1677ff;
+  --button: #4096ff;
+  --light: #fff;
+  --gray: #666;
+  --placeholder: #ddd;
+  --input-bg: rgba(0, 0, 0, 0.1);
+  --title: #ff5100d1;
+  --alias: #ff9900d8;
+  --english: #faad14;
+  --japanese: #cc9933;
+  --definition: #ff9900;
+  --seccess: #00ff00;
+  --failed: #ff0000;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000;
+    --a: #3c89e8;
+    --button: #1668dc;
+    --light: #000;
+    --gray: #f7f7f7c4;
+    --placeholder: #333;
+    --title: #ff6537;
+    --alias: #faa320;
+    --english: #ffbb34;
+    --japanese: #f3b63d;
+    --definition: #ffbb00;
+  }
+}
+body {
+  min-height: 100vh;
+}
+.bgvideo {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+br {
+  display: block;
+  content: "";
+  margin: 8px 0;
+}
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: var(--gray);
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--light);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--button);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--button);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider:after {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: ⅔;
+  left: 10%;
+  bottom: 10%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.3)
+  );
+  z-index: -1;
+}
+.progress {
+  height: 2px;
+  background: lime;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform-origin: 0 50%;
+  animation: scaleProgress auto linear forwards,
+    colorChange auto linear forwards;
+  animation-timeline: scroll(root);
+}
+input::placeholder {
+  color: var(--placeholder);
+}
+a {
+  color: var(--a);
+  margin: 0 4px;
+}
+@keyframes scaleProgress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: lime;
+  }
+}
+
+/* 以上为十年之约黄昏编写的CSS */
