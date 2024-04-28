@@ -15,7 +15,7 @@ export default function Admin() {
     <>
       <video
         className="bgvideo"
-        src="https://skullgirlswiki.cn/Dictionary/Public/sea.mp4"
+        src="https://image.liuxiaohan.cn/Dictionary/Public/Stage_SoundStage_LRG.webp"
         muted
         loop
         autoPlay

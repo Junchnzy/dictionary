@@ -16,7 +16,7 @@ export default function Admin() {
       <div
         className={
           showLogin
-            ? "w-screen h-screen bg-[url(https://skullgirlswiki.cn/Dictionary/Public/Stage_Boardwalk_LRG.png)] bg-cover"
+            ? "w-screen h-screen bg-[url(https://image.liuxiaohan.cn/Dictionary/Public/Stage_Boardwalk_LRG.webp)] bg-cover"
             : "hidden"
         }
       >
@@ -103,7 +103,7 @@ export default function Admin() {
         className={
           showLogin
             ? "hidden"
-            : "bg-[url(https://skullgirlswiki.cn/Dictionary/Public/Stage_RooftopsDay_LRG.png)] w-screen h-screen bg-cover"
+            : "bg-[url(https://image.liuxiaohan.cn/Dictionary/Public/Stage_RooftopsDay_LRG.webp)] w-screen h-screen bg-cover"
         }
       >
         <form className="flex flex-col items-center backdrop-blur-lg rounded-3xl shadow-2xl fixed w-[350px] h-[470px] z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
