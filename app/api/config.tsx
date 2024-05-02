@@ -23,8 +23,8 @@ export function getjwt(username: string, request: NextRequest) {
     JSON.stringify({
       username: encodeURI(username),
       "user-agent": request.headers.get("user-agent"),
-      // 登录过期时间1小时
-      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 1,
+      // 登录过期时间24小时
+      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24,
     }),
     "utf-8"
   ).toString("base64");
@@ -41,7 +41,7 @@ export function setjwt(jwtb: any) {
     }),
     "utf-8"
   ).toString("base64");
-  jwtb.exp = Math.floor(Date.now() / 1000) + 60 * 60;
+  jwtb.exp = Math.floor(Date.now() / 1000) + 60 * 60 * 24;
   jwtb = Buffer.from(JSON.stringify(jwtb), "utf-8").toString("base64");
   let signature = encrypt(`${jwth}+'.'+${jwtb}`);
   return `${jwth}.${jwtb}.${signature}`;
