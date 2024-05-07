@@ -29,15 +29,13 @@ export default function Main() {
   useEffect(() => {
     let jwt = localStorage.getItem("jwt");
     if (jwt) {
-      if (jwt != null) {
-        let exp = decodeURI(JSON.parse(window.atob(jwt.split(".")[1])).exp);
-        if (Date.now() > Number(exp)) {
-          localStorage.removeItem("jwt");
-          setIsLogin(false);
-          router.push("/login");
-        } else {
-          setIsLogin(true);
-        }
+      let exp = decodeURI(JSON.parse(window.atob(jwt.split(".")[1])).exp);
+      if (Math.floor(Date.now() / 1000) > Number(exp)) {
+        localStorage.removeItem("jwt");
+        setIsLogin(false);
+        router.push("/login");
+      } else {
+        setIsLogin(true);
       }
     }
   });

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HTTP } from "@/app/HTTP";
+import { HTTP } from "@/HTTP";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/app/store/store";
 
@@ -13,13 +13,7 @@ export default function Admin() {
 
   return (
     <>
-      <video
-        className="bgvideo"
-        src="https://image.liuxiaohan.cn/Dictionary/Public/Stage_SoundStage_LRG.webp"
-        muted
-        loop
-        autoPlay
-      ></video>
+      <div className="w-screen h-screen bg-[url(https://image.liuxiaohan.cn/Dictionary/Public/Stage_SoundStage_LRG.webp)] bg-cover"></div>
       {data.length == 0 && (
         <form className="flex flex-col items-center rounded-3xl shadow-2xl fixed w-[350px] h-[260px] z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="mt-5 text-[var(--light)] tracking-widest text-3xl">

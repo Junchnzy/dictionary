@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/app/store/store";
-import { HTTP } from "@/app/HTTP";
+import { HTTP } from "@/HTTP";
 
 export default function Admin() {
   const { setIsLogin } = useStore();
