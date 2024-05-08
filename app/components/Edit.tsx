@@ -1,6 +1,6 @@
 "use client";
 
-import { HTTP } from "@/app/HTTP";
+import { HTTP } from "@/HTTP";
 import { useState } from "react";
 import { useStore } from "../store/store";
 import { useRouter } from "next/navigation";

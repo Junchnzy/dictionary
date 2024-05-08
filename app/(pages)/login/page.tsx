@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/app/store/store";
-import { HTTP } from "@/app/HTTP";
+import { HTTP } from "@/HTTP";
 
 export default function Admin() {
   const { setIsLogin } = useStore();
@@ -22,11 +22,11 @@ export default function Admin() {
       >
         <form className="flex flex-col items-center backdrop-blur-lg rounded-3xl shadow-2xl fixed w-[350px] h-[350px] z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="mt-5 text-[var(--light)] tracking-widest text-3xl">
-            LOGIN
+            编辑者登录
           </h1>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="用户名"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, username: e.target.value });
@@ -34,7 +34,7 @@ export default function Admin() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="密码"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, password: e.target.value });
@@ -44,11 +44,11 @@ export default function Admin() {
             <p
               className="text-[var(--light)] cursor-pointer"
               onClick={(e: any) => {
-                setMessage("Please contact the administrator!");
+                setMessage("请联系管理员重置！");
                 e.target.parentElement.parentElement.reset();
               }}
             >
-              Forgot Password ?
+              忘记密码？
             </p>
             <a
               className="text-[var(--light)] cursor-pointer"
@@ -60,7 +60,7 @@ export default function Admin() {
                 e.target.parentElement.parentElement.reset();
               }}
             >
-              Sign up
+              注册
             </a>
           </div>
           <div className="mt-5 h-6">
@@ -73,7 +73,7 @@ export default function Admin() {
           </div>
           <input
             type="button"
-            value="Sign in"
+            value="登录"
             className="mt-5 w-[280px] px-2 h-10 text-[var(--light)] bg-[var(--button)] rounded-xl cursor-pointer"
             onClick={async (e: any) => {
               e.preventDefault();
@@ -108,11 +108,11 @@ export default function Admin() {
       >
         <form className="flex flex-col items-center backdrop-blur-lg rounded-3xl shadow-2xl fixed w-[350px] h-[470px] z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="mt-5 text-[var(--light)] tracking-widest text-3xl">
-            Register
+            成为编辑者
           </h1>
           <input
             type="password"
-            placeholder="ID card"
+            placeholder="身份证号码（加密后站长也无法查询）"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, id: e.target.value });
@@ -120,7 +120,7 @@ export default function Admin() {
           />
           <input
             type="text"
-            placeholder="Username"
+            placeholder="用户名"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, username: e.target.value });
@@ -128,7 +128,7 @@ export default function Admin() {
           />
           <input
             type="password"
-            placeholder="Create Password"
+            placeholder="密码"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, password: e.target.value });
@@ -136,7 +136,7 @@ export default function Admin() {
           />
           <input
             type="password"
-            placeholder="Confirm Password"
+            placeholder="确认密码"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, confirm: e.target.value });
@@ -153,9 +153,9 @@ export default function Admin() {
             }}
           >
             <p className="text-[var(--light)] cursor-pointer">
-              Already have an account ?
+              已有账号？
             </p>
-            <a className="text-[var(--light)] cursor-pointer">Sign in</a>
+            <a className="text-[var(--light)] cursor-pointer">登录</a>
           </div>
           <div className="mt-5 h-6">
             {message == "Success!" && (
@@ -167,7 +167,7 @@ export default function Admin() {
           </div>
           <input
             type="button"
-            value="Sign up"
+            value="注册"
             className="mt-5 w-[280px] px-2 h-10 text-[var(--light)] bg-[var(--button)] rounded-xl cursor-pointer"
             onClick={async (e: any) => {
               e.preventDefault();

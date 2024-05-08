@@ -1,6 +1,6 @@
 "use client";
 
-import { HTTP } from "@/app/HTTP";
+import { HTTP } from "@/HTTP";
 import { createContext, useContext, useState, useEffect } from "react";
 
 const StoreContext = createContext<any>(null);

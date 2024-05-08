@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="noScrollbar bg-[var(--bg)]">
+    <html lang="zh-CN" className="noScrollbar bg-[var(--bg)]">
       <body className={inter.className}>
         <StoreProvider>
           <div className="progress"></div>

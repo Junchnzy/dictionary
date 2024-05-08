@@ -27,8 +27,16 @@ export default function Main() {
     };
   }, []);
   useEffect(() => {
-    if (localStorage.getItem("jwt")) {
-      setIsLogin(true);
+    let jwt = localStorage.getItem("jwt");
+    if (jwt) {
+      let exp = decodeURI(JSON.parse(window.atob(jwt.split(".")[1])).exp);
+      if (Math.floor(Date.now() / 1000) > Number(exp)) {
+        localStorage.removeItem("jwt");
+        setIsLogin(false);
+        router.push("/login");
+      } else {
+        setIsLogin(true);
+      }
     }
   });
   function handleKeyDown() {

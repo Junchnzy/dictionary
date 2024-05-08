@@ -7,8 +7,8 @@ export function encrypt(data: string) {
 }
 // 管理员账号密码
 export const admin = {
-  username: "admin",
-  password: "admin",
+  username: "ftgscholar",
+  password: "ftgscholar",
 };
 // 生成jwt
 export function getjwt(username: string, request: NextRequest) {
@@ -23,8 +23,8 @@ export function getjwt(username: string, request: NextRequest) {
     JSON.stringify({
       username: encodeURI(username),
       "user-agent": request.headers.get("user-agent"),
-      // 登录过期时间1小时
-      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 1,
+      // 登录过期时间24小时
+      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 336,
     }),
     "utf-8"
   ).toString("base64");
@@ -41,7 +41,7 @@ export function setjwt(jwtb: any) {
     }),
     "utf-8"
   ).toString("base64");
-  jwtb.exp = Math.floor(Date.now() / 1000) + 60 * 60;
+  jwtb.exp = Math.floor(Date.now() / 1000) + 60 * 60 * 336;
   jwtb = Buffer.from(JSON.stringify(jwtb), "utf-8").toString("base64");
   let signature = encrypt(`${jwth}+'.'+${jwtb}`);
   return `${jwth}.${jwtb}.${signature}`;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HTTP } from "@/app/HTTP";
+import { HTTP } from "@/HTTP";
 import { useRouter } from "next/navigation";
 import { useStore } from "@/app/store/store";
 
@@ -13,21 +13,15 @@ export default function Admin() {
 
   return (
     <>
-      <video
-        className="bgvideo"
-        src="https://image.liuxiaohan.cn/Dictionary/Public/Stage_SoundStage_LRG.webp"
-        muted
-        loop
-        autoPlay
-      ></video>
+      <div className="w-screen h-screen bg-[url(https://image.liuxiaohan.cn/Dictionary/Public/Stage_SoundStage_LRG.webp)] bg-cover"></div>
       {data.length == 0 && (
         <form className="flex flex-col items-center rounded-3xl shadow-2xl fixed w-[350px] h-[260px] z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="mt-5 text-[var(--light)] tracking-widest text-3xl">
-            LOGIN
+            登录
           </h1>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="用户名"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, username: e.target.value });
@@ -35,7 +29,7 @@ export default function Admin() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="密码"
             className="mt-5 w-[280px] px-2 h-10 outline-none text-[var(--light)] bg-[var(--input-bg)] rounded-xl"
             onChange={(e: any) => {
               setDatas({ ...datas, password: e.target.value });
@@ -43,7 +37,7 @@ export default function Admin() {
           />
           <input
             type="button"
-            value="Sign in"
+            value="登录"
             className="mt-5 w-[280px] px-2 h-10 text-[var(--light)] bg-[var(--button)] rounded-xl cursor-pointer"
             onClick={async (e: any) => {
               e.preventDefault();
@@ -87,9 +81,9 @@ export default function Admin() {
           <table>
             <thead>
               <tr className="text-[var(--light)]">
-                <th className="pr-10">username</th>
-                <th className="pr-10">status</th>
-                <th>action</th>
+                <th className="pr-10">用户名 </th>
+                <th className="pr-10">状态</th>
+                <th>操作</th>
               </tr>
             </thead>
             <tbody>
@@ -150,7 +144,7 @@ export default function Admin() {
                           e.target.parentElement.parentElement.remove();
                         }}
                       >
-                        delete
+                        删除
                       </button>
                     </td>
                   </tr>
