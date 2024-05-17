@@ -16,7 +16,7 @@ export default function Root() {
     <>
       <div className="w-[90%] mx-auto lg:max-w-[800px] xl:max-w-[900px] 2xl:max-w-[1100px]">
         <h1 className="pt-3 text-2xl font-bold text-[var(--title)]">
-          中国最好的格斗游戏词典
+          中国最好的格斗游戏术语词典
         </h1>
         <h2 className="my-3 text-xl font-bold text-[var(--definition)]">
           页面简介
@@ -49,6 +49,19 @@ export default function Root() {
             赞助我们
           </a>
           。
+        </h3>
+        <h2 className="my-3 text-xl font-bold text-[var(--definition)]">
+          相关链接
+        </h2>
+        <h3 className="my-3 text-[var(--gray)]">
+          <a href="https://glossary.infil.net/" target="_blank">
+          The Fighting Game Glossary by Infil（英）
+          </a>
+          <br/>
+          <a href="https://kakuge.com/wiki/" target="_blank">
+          格ゲー用語事典（日）
+          </a>
+          
         </h3>
       </div>
       <Footer />
